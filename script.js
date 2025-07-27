@@ -42,6 +42,8 @@ const mockData = {
                     currentWaitTime: '10-15 min',
                     whatPeopleSaying: 'Mixed reviews about this famous stall. While some praise the tender chicken and fragrant rice, others find it overrated with long queues. The organized ordering system helps, but some dishes are served cold. Many agree it\'s worth trying once but opinions vary on whether it lives up to the hype.',
                     image: 'assets/Maxwell Hawker Centre/tiantianchickenrice/stall header.png',
+                    imagePosition: 'center top',
+                    menuImage: 'assets/Maxwell Hawker Centre/tiantianchickenrice/review_menu.png',
                     photos: [
                         'assets/Maxwell Hawker Centre/tiantianchickenrice/review1.png',
                         'assets/Maxwell Hawker Centre/tiantianchickenrice/review2.png',
@@ -51,19 +53,31 @@ const mockData = {
                     ]
                 },
                 {
-                    id: 'seletar-fish',
-                    name: 'Famous Seletar Fish Soup',
+                    id: 'ah-tai-chicken',
+                    name: 'Ah Tai Chicken Rice',
                     unit: '#01-14',
                     cuisine: 'Chinese',
-                    rating: 4.1,
-                    reviewCount: 892,
-                    priceRange: 'S$4.00 - S$8.00',
-                    popularDishes: ['Fish Soup', 'Sliced Fish Bee Hoon', 'Fish Porridge'],
+                    rating: 4.3,
+                    reviewCount: 1248,
+                    priceRange: 'S$6.00 - S$8.00',
+                    popularDishes: ['Hainanese Chicken Rice', 'Roasted Chicken', 'Chicken Soup'],
                     hours: '11:00 AM - 8:00 PM',
                     closedDays: ['Tuesday'],
                     paymentMethods: ['Cash', 'PayNow'],
-                    whatPeopleSaying: 'Fresh fish and generous portions. The soup base is clear and flavorful. Some customers mention longer wait times during dinner.',
-                    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop'
+                    currentWaitTime: '15-20 min',
+                    whatPeopleSaying: 'Hidden gem that delivers better value than Tian Tian! Each grain of rice is perfectly coated in chicken oil with a beautiful off-white hue. Chicken is smooth and silky. Long queues but worth the wait for authentic Hainanese chicken rice at reasonable prices.',
+                    image: 'assets/Maxwell Hawker Centre/ahtaichickenrice/stall header.png',
+                    imagePosition: 'center center',
+                    menuImage: 'assets/Maxwell Hawker Centre/ahtaichickenrice/menu.png',
+                    photos: [
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/review1.png',
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/review2.png',
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/review3.png',
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/review4.png',
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/review5.png',
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/review_vibe.png',
+                        'assets/Maxwell Hawker Centre/ahtaichickenrice/menu.png'
+                    ]
                 },
                 {
                     id: 'zhen-porridge',
@@ -79,6 +93,8 @@ const mockData = {
                     paymentMethods: ['Cash', 'PayNow'],
                     whatPeopleSaying: 'Comfort food at its best. The porridge is smooth and well-seasoned. Perfect for breakfast or light meals.',
                     image: 'assets/Maxwell Hawker Centre/zhenzhenporridge/header.png',
+                    imagePosition: 'center top',
+                    menuImage: 'assets/Maxwell Hawker Centre/zhenzhenporridge/menu.png',
                     photos: [
                         'assets/Maxwell Hawker Centre/zhenzhenporridge/review1.png',
                         'assets/Maxwell Hawker Centre/zhenzhenporridge/review_2.png',
@@ -129,6 +145,8 @@ const mockData = {
                     paymentMethods: ['Cash Only'],
                     whatPeopleSaying: 'Mixed reviews on service quality, but customers appreciate the authentic dim sum flavors and reasonable prices.',
                     image: 'assets/Chinatown Complex/hongkongmongkokdimsum/stall header.png',
+                    imagePosition: 'center center',
+                    menuImage: 'assets/Chinatown Complex/hongkongmongkokdimsum/menu.png',
                     photos: [
                         'assets/Chinatown Complex/hongkongmongkokdimsum/image.png',
                         'assets/Chinatown Complex/hongkongmongkokdimsum/review1.png',
@@ -152,6 +170,8 @@ const mockData = {
                     currentWaitTime: '20-30 min',
                     whatPeopleSaying: 'Long-time favorite with heavenly XLB that rivals Din Tai Fung. The soup is clear yet rich, skin is thin, and meat fresh without porky smell. Guo Tie equally impressive with perfect crispy crust. Portions have shrunk over years but quality remains consistent. Expect queues but worth the wait.',
                     image: 'assets/Chinatown Complex/ZhongGuoLaMianXiaoLongBao/header.png',
+                    imagePosition: 'center top',
+                    menuImage: 'assets/Chinatown Complex/ZhongGuoLaMianXiaoLongBao/menu.png',
                     photos: [
                         'assets/Chinatown Complex/ZhongGuoLaMianXiaoLongBao/review1.png',
                         'assets/Chinatown Complex/ZhongGuoLaMianXiaoLongBao/review2.png',
@@ -174,6 +194,8 @@ const mockData = {
                     paymentMethods: ['Cash Only'],
                     whatPeopleSaying: 'Quality has been inconsistent recently. Long wait times and some service issues reported. However, when done well, the claypot rice is excellent.',
                     image: 'assets/Chinatown Complex/LianHeBenJiClaypotRice/stall header.png',
+                    imagePosition: 'center top',
+                    menuImage: 'assets/Chinatown Complex/LianHeBenJiClaypotRice/menu.png',
                     photos: [
                         'assets/Chinatown Complex/LianHeBenJiClaypotRice/review1.png',
                         'assets/Chinatown Complex/LianHeBenJiClaypotRice/review2.png',
@@ -191,8 +213,8 @@ const mockData = {
         {
             id: 1,
             stallId: 'tian-tian',
-            reviewerName: 'Local Foodie',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Kim Wee Soh',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjXdtoS5p7FKIWfxvOU_wTXvYWCRycncRNcOv9PSPwnKvZHdki4=w65-h65-p-rp-mo-ba5-br100.png',
             rating: 4,
             date: '1 week ago',
             text: 'The line wasn\'t as long when we visited on a Monday morning. The wait was about 5 minutes. It\'s very organized now with a window for ordering and payment and the next window for picking up your food while you remain in the queue. Food was still as good as I remembered almost a decade ago, although the portion is definitely smaller now.'
@@ -200,8 +222,8 @@ const mockData = {
         {
             id: 2,
             stallId: 'tian-tian',
-            reviewerName: 'Tourist Explorer',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Keith Er',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjU8sKSzPxkbTGPKZzjQJXRJ3_trVOR35fxBg5J1qqUk17hczXZvPw=w65-h65-p-rp-mo-ba8-br100.png',
             rating: 5,
             date: '3 days ago', 
             text: 'If you\'re in Singapore and want to try a true local classic, Tian Tian at the hawker centre is a must. The chicken was tender, boneless, and full of flavor, and the rice was so fragrant it could stand on its own. Well worth the 10–15 minute wait.'
@@ -209,8 +231,8 @@ const mockData = {
         {
             id: 3,
             stallId: 'tian-tian',
-            reviewerName: 'Food Critic',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Norman Au',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjUGsvnL-aEDhS1aa2nDcr0lSG9aDQaBttQmQdU9fZ6NjKgMOlowzg=w65-h65-p-rp-mo-ba2-br100.png',
             rating: 2,
             date: '5 days ago',
             text: 'Unfortunately, I found this place to be completely overrated. The queue was long, though to their credit, service was fast once you get in. However, the food was disappointing—served cold, and in some cases, the chicken wasn\'t fully cooked.'
@@ -218,8 +240,8 @@ const mockData = {
         {
             id: 4,
             stallId: 'xlb-specialist',
-            reviewerName: 'XLB Enthusiast',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Jeremy Toh',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjVigOgh8-8iiL5bvo5CaeP_uNv-QZAsTZT0KOU7P69PEURfC3k=w65-h65-p-rp-mo-ba6-br100.png',
             rating: 5,
             date: '2 days ago',
             text: 'We have been patronising Zhong Guo La Mian Xiao Long Bao for a really long time now. The XLB was, in all honesty, heavenly. The soup within the XLB looks clear yet rich, the skin is thin and the meat does not have a "porky" smell. Definitely one of the best in Singapore!'
@@ -227,8 +249,8 @@ const mockData = {
         {
             id: 5,
             stallId: 'xlb-specialist',
-            reviewerName: 'Dumpling Lover',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Ong Chung Hock',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjWD5IiN0LRavusYKv0vlpyW3crg63bdPyNllYV5ye26HVILVyQz=w65-h65-p-rp-mo-ba3-br100.png',
             rating: 4,
             date: '1 week ago',
             text: 'The best value you\'re gonna get for Dim Sum anywhere in Singapore! We ordered Xiao Long Bao, Sichuan Sauce Dumpling and Pan Fried Dumplings and they were all delicious and super budget friendly. Fresh ingredients, top-notched seasonings, and cheap (approx. 7 SGD each dish).'
@@ -236,8 +258,8 @@ const mockData = {
         {
             id: 6,
             stallId: 'claypot-rice',
-            reviewerName: 'Claypot Regular',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Robert Zheng',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjV9Vnfpavjr2VJLzY5DBco50oQyY2dwXAqmEz2tmvg4_CJyiehS6A=w65-h65-p-rp-mo-ba6-br100.png',
             rating: 5,
             date: '4 days ago',
             text: 'Lian He Ben Ji seems to be the rare case in which the taste of the claypot rice just gets better over time! The claypot rice is cooked to the extent that there\'s a layer of crust at the side of the claypot; it looks charred and inedible but it isn\'t and in fact crispy! Chicken was succulent.'
@@ -245,8 +267,8 @@ const mockData = {
         {
             id: 7,
             stallId: 'claypot-rice',
-            reviewerName: 'Food Explorer',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Kim Wee Soh',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjXdtoS5p7FKIWfxvOU_wTXvYWCRycncRNcOv9PSPwnKvZHdki4=w65-h65-p-rp-mo-ba5-br100.png',
             rating: 4,
             date: '1 week ago',
             text: 'We enjoyed a very hearty meal for two at this well established Claypot restaurant. Absolutely 10/10 for the claypot rice flavours and textures. We really loved how succulent the meat was and how the lap cheong sausage and salted fish flavours embedded themselves in to the rice.'
@@ -254,8 +276,8 @@ const mockData = {
         {
             id: 8,
             stallId: 'zhen-porridge',
-            reviewerName: 'Porridge Lover',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Keith Er',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjU8sKSzPxkbTGPKZzjQJXRJ3_trVOR35fxBg5J1qqUk17hczXZvPw=w65-h65-p-rp-mo-ba8-br100.png',
             rating: 5,
             date: '3 days ago',
             text: 'My go-to. It\'s smooth and velvety, and the ingredients are well mixed. It\'s rare to find a place that takes the extra step to blend the century egg evenly into the porridge, rather than just adding them on top. Each spoonful is a blast of taste from the century egg!'
@@ -263,8 +285,8 @@ const mockData = {
         {
             id: 9,
             stallId: 'zhen-porridge',
-            reviewerName: 'Regular Customer',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Norman Au',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjUGsvnL-aEDhS1aa2nDcr0lSG9aDQaBttQmQdU9fZ6NjKgMOlowzg=w65-h65-p-rp-mo-ba2-br100.png',
             rating: 5,
             date: '1 week ago',
             text: 'This stall is my all time favorite and serve the best porridge in the vicinity. Lots of ingredients with very nice texture. The garnishes also enhance the flavour. The taste is consistent throughout the years.'
@@ -272,8 +294,8 @@ const mockData = {
         {
             id: 10,
             stallId: 'zhen-porridge',
-            reviewerName: 'Budget Foodie',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Jeremy Toh',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjVigOgh8-8iiL5bvo5CaeP_uNv-QZAsTZT0KOU7P69PEURfC3k=w65-h65-p-rp-mo-ba6-br100.png',
             rating: 4,
             date: '5 days ago',
             text: 'Value for money porridge. Very thick porridge, with plenty of flavour and texture. Add the egg - it gives the porridge added weight and character. They also put lots of condiments. The queue during lunch can be very long, but the wait is definitely worth it!'
@@ -281,8 +303,8 @@ const mockData = {
         {
             id: 11,
             stallId: 'hk-tim-sum',
-            reviewerName: 'Dim Sum Fan',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Ong Chung Hock',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjWD5IiN0LRavusYKv0vlpyW3crg63bdPyNllYV5ye26HVILVyQz=w65-h65-p-rp-mo-ba3-br100.png',
             rating: 4,
             date: '2 days ago',
             text: 'The stall been for for a long time yet this was my first visit and it tasted great!! You need to take the queue number first, order then is your call. The Barbecued Pork Bun (叉燒包) is their signature dish.'
@@ -290,8 +312,8 @@ const mockData = {
         {
             id: 12,
             stallId: 'hk-tim-sum',
-            reviewerName: 'Local Resident',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Robert Zheng',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjV9Vnfpavjr2VJLzY5DBco50oQyY2dwXAqmEz2tmvg4_CJyiehS6A=w65-h65-p-rp-mo-ba6-br100.png',
             rating: 4,
             date: '1 week ago',
             text: 'Char Siew Bao were amazing. They ask if you want to eat there or takeaway which is handy. Take a number and you only order when your number is called. You collect the food when you order as they have the food in steamers already.'
@@ -299,11 +321,38 @@ const mockData = {
         {
             id: 13,
             stallId: 'hk-tim-sum',
-            reviewerName: 'Dim Sum Critic',
-            reviewerAvatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
+            reviewerName: 'Kim Wee Soh',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjXdtoS5p7FKIWfxvOU_wTXvYWCRycncRNcOv9PSPwnKvZHdki4=w65-h65-p-rp-mo-ba5-br100.png',
             rating: 3,
             date: '4 days ago',
             text: 'It can get busy here and the ticket system can be quite confusing. The dim sum were of good quality. I particularly enjoyed the char siew pao. The cheong fan was also delicious. It\'s a food court experience and its popularity means that it requires patience.'
+        },
+        {
+            id: 14,
+            stallId: 'ah-tai-chicken',
+            reviewerName: 'Keith Er',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjU8sKSzPxkbTGPKZzjQJXRJ3_trVOR35fxBg5J1qqUk17hczXZvPw=w65-h65-p-rp-mo-ba8-br100.png',
+            rating: 5,
+            date: '2 days ago',
+            text: 'Each grain of rice has a life of its own. The rice is generously coated in chicken oil that gives it a beautiful off white hue and I could taste each grain bouncing in my mouth. Chicken is smooth and silky. Not a fan of chicken skin usually but I subconsciously devoured everything.'
+        },
+        {
+            id: 15,
+            stallId: 'ah-tai-chicken',
+            reviewerName: 'Jeremy Toh',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjVigOgh8-8iiL5bvo5CaeP_uNv-QZAsTZT0KOU7P69PEURfC3k=w65-h65-p-rp-mo-ba6-br100.png',
+            rating: 5,
+            date: '1 week ago',
+            text: 'Best Hainanese Chicken Rice! We did some research before reached to this place and tried SG\'s chicken rice, then figured out even there is no Michelin star for this place - this is actually superb with reasonable price. The chicken is soft, tender goes with fresh, delicious vegie and amazing chicken rice.'
+        },
+        {
+            id: 16,
+            stallId: 'ah-tai-chicken',
+            reviewerName: 'Ong Chung Hock',
+            reviewerAvatar: 'assets/example_reviews/reviews_profile/ALV-UjWD5IiN0LRavusYKv0vlpyW3crg63bdPyNllYV5ye26HVILVyQz=w65-h65-p-rp-mo-ba3-br100.png',
+            rating: 4,
+            date: '3 days ago',
+            text: 'Not as famous as Tian Tian but this shop delivers higher value, as they produce very delicious Singaporean chicken rice at a more reasonable price than Tian Tian. This shop has long queue so be patient.'
         }
     ]
 };
@@ -346,6 +395,68 @@ function goBack() {
     if (currentPage !== 'home') {
         showPage('home');
         document.querySelector('.back-btn').style.display = 'none';
+    }
+}
+
+// Menu modal functions
+function showMenuModal(menuImageSrc, stallName) {
+    const modal = document.createElement('div');
+    modal.className = 'menu-modal';
+    modal.innerHTML = `
+        <div class="menu-modal-overlay" onclick="closeMenuModal()"></div>
+        <div class="menu-modal-content">
+            <button class="menu-modal-close" onclick="closeMenuModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="${menuImageSrc}" alt="${stallName} Menu" class="menu-modal-image">
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Trigger animation
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+}
+
+function closeMenuModal() {
+    const modal = document.querySelector('.menu-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
+
+// Photo gallery modal functions
+function showPhotoModal(photoSrc, stallName) {
+    const modal = document.createElement('div');
+    modal.className = 'photo-modal';
+    modal.innerHTML = `
+        <div class="photo-modal-overlay" onclick="closePhotoModal()"></div>
+        <div class="photo-modal-content">
+            <button class="photo-modal-close" onclick="closePhotoModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="${photoSrc}" alt="${stallName} Photo" class="photo-modal-image">
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Trigger animation
+    setTimeout(() => {
+        modal.classList.add('active');
+    }, 10);
+}
+
+function closePhotoModal() {
+    const modal = document.querySelector('.photo-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
     }
 }
 
@@ -611,7 +722,9 @@ function showStallDetail(centreId, stallId) {
     const detailPage = document.getElementById('stall-detail');
     detailPage.innerHTML = `
         <div class="stall-detail-hero">
-            <img src="${stall.image}" alt="${stall.name}">
+            <div class="stall-hero-card">
+                <img src="${stall.image}" alt="${stall.name}" style="object-position: ${stall.imagePosition || 'center center'};">
+            </div>
             <div class="stall-hero-content">
                 <div class="breadcrumb">
                     <a href="#" onclick="showHawkerDetail('${centreId}')">${centre.name}</a> › ${stall.name}
@@ -633,7 +746,7 @@ function showStallDetail(centreId, stallId) {
         
         <div class="stall-detail-content">
             <div class="photo-gallery">
-                ${stall.photos ? stall.photos.map(photo => `<img src="${photo}" alt="${stall.name}">`).join('') : `<img src="${stall.image}" alt="${stall.name}">`}
+                ${stall.photos ? stall.photos.map(photo => `<img src="${photo}" alt="${stall.name}" onclick="showPhotoModal('${photo}', '${stall.name}')" style="cursor: pointer;">`).join('') : `<img src="${stall.image}" alt="${stall.name}" onclick="showPhotoModal('${stall.image}', '${stall.name}')" style="cursor: pointer;">`}
             </div>
             
             <div class="popular-dishes-section">
@@ -675,6 +788,15 @@ function showStallDetail(centreId, stallId) {
                     </div>
                 </div>
             </div>
+            
+            ${stall.menuImage ? `
+            <div class="menu-card-section">
+                <h3>Menu</h3>
+                <div class="menu-card">
+                    <img src="${stall.menuImage}" alt="${stall.name} Menu" class="menu-image" onclick="showMenuModal('${stall.menuImage}', '${stall.name}')" style="cursor: pointer;">
+                </div>
+            </div>
+            ` : ''}
             
             <div class="what-people-saying">
                 <h3>What people are saying</h3>
