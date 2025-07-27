@@ -1,0 +1,15 @@
+Can you come up with a MVP proof of concept: incorporating BrightData's apis to collect the data.
+
+Trigger Data Collection API
+Use this API to start a data collection with specified parameters. It will return the "snapshot_id" for reference.
+curl -H "Authorization: Bearer 098f7911c78fc644d0edd08ada631f41dcfa3d9ef63e44a224d9105720279a1f" -H "Content-Type: application/json" -d '[{"url":"https://www.google.com/maps/place/Waterfront+Botanical+Gardens/@38.2630366,-85.7288454,15z/data=!4m8!3m7!1s0x8869731e16a7bdbd:0x2f5d238fefed7ca1!8m2!3d38.2632837!4d-85.7239738!9m1!1b1!16s%2Fg%2F11c709xzzx?hl=en&entry=ttu","days_limit":18},{"url":"https://www.google.com/maps/place/Crash+Champions+Collision+Repair+Southwest+Freeway/@29.6665614,-95.5500391,17z/data=!4m8!3m7!1s0x8640e81b678a64ab:0xe6412a1e06fae48!8m2!3d29.6665614!4d-95.5500391!9m1!1b1!16s%2Fg%2F1txy2r0t?hl=en&entry=ttu","days_limit":9}]' "https://api.brightdata.com/datasets/v3/trigger?dataset_id=gd_luzfs1dn2oa0teb81&include_errors=true"
+https://docs.brightdata.com/api-reference/rest-api/scraper/trigger-collection
+
+Monitor Progress API
+Use this API to check your data collection status. Enter the snapshot id provided by the "Trigger Data Collection API" response. It will return "running" during data gathering and "ready" when the data is available.
+curl -H "Authorization: Bearer 098f7911c78fc644d0edd08ada631f41dcfa3d9ef63e44a224d9105720279a1f" "https://api.brightdata.com/datasets/v3/progress/"
+https://docs.brightdata.com/api-reference/web-scraper-api/management-apis/monitor-progress
+
+Delivery options
+https://docs.brightdata.com/api-reference/web-scraper-api/delivery-apis/download-snapshot
+curl -H "Authorization: Bearer 098f7911c78fc644d0edd08ada631f41dcfa3d9ef63e44a224d9105720279a1f" "https://api.brightdata.com/datasets/v3/snapshot/?format=json"

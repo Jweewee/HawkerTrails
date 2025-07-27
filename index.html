@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HawkerAI - Singapore's Hawker Centre Directory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="back-btn" onclick="goBack()" style="display: none;">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="header-title">
+            <i class="fas fa-utensils brand-icon"></i>
+            <span>HawkerAI</span>
+        </div>
+        <button class="share-btn">
+            <i class="fas fa-share"></i>
+        </button>
+    </header>
+
+    <!-- Homepage -->
+    <div id="home" class="page active">
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search hawker centres, stalls..." class="search-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Hawker Centres</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15k+</span>
+                <span class="stat-label">Food Stalls</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">500k+</span>
+                <span class="stat-label">Reviews</span>
+            </div>
+        </div>
+
+        <!-- Popular Hawker Centres -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Popular hawker centres</h2>
+                <button class="show-all-btn">Show all</button>
+            </div>
+            
+            <div class="hawker-list">
+                <div class="hawker-item" onclick="showHawkerDetail('maxwell')">
+                    <div class="hawker-number">1</div>
+                    <div class="hawker-image">
+                        <img src="assets/Maxwell Hawker Centre/Maxwell header.png" alt="Maxwell Food Centre">
+                        <div class="save-btn">
+                            <i class="far fa-bookmark"></i>
+                        </div>
+                    </div>
+                    <div class="hawker-info">
+                        <div class="hawker-header">
+                            <h3>Maxwell Food Centre</h3>
+                            <div class="download-btn">
+                                <i class="fas fa-download"></i>
+                            </div>
+                        </div>
+                        <div class="hawker-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.2</span>
+                            </span>
+                            <span class="distance">2 min walk</span>
+                            <span class="difficulty busy">Usually busy</span>
+                        </div>
+                        <div class="hawker-tags">
+                            <span class="tag">Hainanese Chicken Rice</span>
+                            <span class="tag">Fish Soup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hawker-item" onclick="showHawkerDetail('chinatown')">
+                    <div class="hawker-number">2</div>
+                    <div class="hawker-image">
+                        <img src="assets/Chinatown Complex/Chinatown Complex header.png" alt="Chinatown Complex">
+                        <div class="save-btn">
+                            <i class="far fa-bookmark"></i>
+                        </div>
+                    </div>
+                    <div class="hawker-info">
+                        <div class="hawker-header">
+                            <h3>Chinatown Complex Food Centre</h3>
+                            <div class="download-btn">
+                                <i class="fas fa-download"></i>
+                            </div>
+                        </div>
+                        <div class="hawker-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.1</span>
+                            </span>
+                            <span class="distance">5 min walk</span>
+                            <span class="difficulty very-busy">Very busy</span>
+                        </div>
+                        <div class="hawker-tags">
+                            <span class="tag">Xiao Long Bao</span>
+                            <span class="tag">Dim Sum</span>
+                            <span class="tag">Claypot Rice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Stalls -->
+        <div class="content-section">
+            <div class="section-header">
+                <h2>Trending stalls</h2>
+                <span class="trending-indicator">🔥</span>
+            </div>
+            
+            <div class="trending-list">
+                <div class="trending-item" onclick="showStallDetail('chinatown', 'xlb-specialist')">
+                    <div class="trending-image">
+                        <img src="assets/Chinatown Complex/ZhongGuoLaMianXiaoLongBao/header.png" alt="XLB">
+                    </div>
+                    <div class="trending-info">
+                        <h4>Zhong Guo La Mian Xiao Long Bao</h4>
+                        <p>Chinatown Complex</p>
+                        <div class="trending-meta">
+                            <span class="rating">★ 4.6</span>
+                            <span class="price">S$7-15</span>
+                            <span class="wait">~20 min</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trending-item" onclick="showStallDetail('maxwell', 'tian-tian')">
+                    <div class="trending-image">
+                        <img src="assets/Maxwell Hawker Centre/tiantianchickenrice/stall header.png" alt="Tian Tian">
+                    </div>
+                    <div class="trending-info">
+                        <h4>Tian Tian Hainanese Chicken Rice</h4>
+                        <p>Maxwell Food Centre</p>
+                        <div class="trending-meta">
+                            <span class="rating">★ 4.3</span>
+                            <span class="price">S$3.50-5</span>
+                            <span class="wait">~15 min</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trending-item" onclick="showStallDetail('chinatown', 'claypot-rice')">
+                    <div class="trending-image">
+                        <img src="assets/Chinatown Complex/LianHeBenJiClaypotRice/stall header.png" alt="Claypot Rice">
+                    </div>
+                    <div class="trending-info">
+                        <h4>Lian He Ben Ji Claypot Rice</h4>
+                        <p>Chinatown Complex</p>
+                        <div class="trending-meta">
+                            <span class="rating">★ 3.9</span>
+                            <span class="price">S$8-12</span>
+                            <span class="wait">~25 min</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="trending-item" onclick="showStallDetail('maxwell', 'zhen-porridge')">
+                    <div class="trending-image">
+                        <img src="assets/Maxwell Hawker Centre/zhenzhenporridge/header.png" alt="Zhen Zhen Porridge">
+                    </div>
+                    <div class="trending-info">
+                        <h4>Zhen Zhen Porridge</h4>
+                        <p>Maxwell Food Centre</p>
+                        <div class="trending-meta">
+                            <span class="rating">★ 4.0</span>
+                            <span class="price">S$3-6</span>
+                            <span class="wait">~10 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Page -->
+    <div id="search-results" class="page">
+        <div class="results-header">
+            <h1>Hawker Centres near Marina Bay</h1>
+            <p>12 results • Sorted by distance</p>
+        </div>
+        <div class="results-container">
+            <div class="filters-sidebar">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <h4>Distance</h4>
+                    <label><input type="checkbox" checked> Within 2km</label>
+                    <label><input type="checkbox"> Within 5km</label>
+                </div>
+                <div class="filter-group">
+                    <h4>Cuisine Type</h4>
+                    <label><input type="checkbox"> Chinese</label>
+                    <label><input type="checkbox"> Malay</label>
+                    <label><input type="checkbox"> Indian</label>
+                    <label><input type="checkbox"> Western</label>
+                </div>
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <label><input type="checkbox"> S$1-5</label>
+                    <label><input type="checkbox"> S$5-10</label>
+                    <label><input type="checkbox"> S$10+</label>
+                </div>
+            </div>
+            <div class="results-list">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hawker Centre Detail Page -->
+    <div id="hawker-detail" class="page">
+        <!-- Content will be populated by JavaScript -->
+    </div>
+
+    <!-- Stall Detail Page -->
+    <div id="stall-detail" class="page">
+        <!-- Content will be populated by JavaScript -->
+    </div>
+
+    <!-- Add Stall Workflow Page -->
+    <div id="add-stall" class="page">
+        <div class="add-stall-container">
+            <h1>Add a New Stall</h1>
+            <p>Help grow Singapore's most comprehensive hawker directory</p>
+            
+            <div class="input-methods">
+                <div class="input-method active" data-method="url">
+                    <div class="method-header">
+                        <i class="fas fa-link"></i>
+                        <h3>Add by URL</h3>
+                        <p>Google Maps, Instagram, Facebook, or any web link</p>
+                    </div>
+                    <div class="method-content">
+                        <input type="text" placeholder="Paste Google Maps URL, Instagram post, or any link..." class="url-input">
+                        <button class="btn-primary" onclick="startWorkflow('url')">Start Processing</button>
+                    </div>
+                </div>
+
+                <div class="input-method" data-method="text">
+                    <div class="method-header">
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Describe the Stall</h3>
+                        <p>Tell us about the stall in your own words</p>
+                    </div>
+                    <div class="method-content">
+                        <textarea placeholder="e.g., fatty ox HK kitchen chinatown complex, or the chicken rice stall at Maxwell near the corner entrance..." class="text-input"></textarea>
+                        <button class="btn-primary" onclick="startWorkflow('text')">Find & Process</button>
+                    </div>
+                </div>
+
+                <div class="input-method" data-method="photo">
+                    <div class="method-header">
+                        <i class="fas fa-camera"></i>
+                        <h3>Upload Photo</h3>
+                        <p>Photo of the stall, signboard, or food</p>
+                    </div>
+                    <div class="method-content">
+                        <div class="photo-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag & drop or click to upload</p>
+                            <input type="file" accept="image/*" style="display: none;">
+                        </div>
+                        <button class="btn-primary" onclick="startWorkflow('photo')">Analyze & Process</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workflow Progress Page -->
+    <div id="workflow-progress" class="page">
+        <div class="workflow-container">
+            <h1>Processing Your Stall</h1>
+            <div class="progress-steps">
+                <div class="step active">
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <h3>Collecting Data</h3>
+                    <p>Gathering information from Google Maps and reviews...</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Processing Reviews</h3>
+                    <p>Analyzing recent reviews and extracting insights...</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-plus-circle"></i></div>
+                    <h3>Adding to Directory</h3>
+                    <p>Creating stall entry and updating hawker centre...</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Complete</h3>
+                    <p>Your stall is now live in HawkerAI!</p>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Fullscreen Overlay -->
+    <div id="map-overlay" class="map-overlay">
+        <div id="map-fullscreen" class="map-fullscreen"></div>
+        <button class="map-close-btn" onclick="toggleFullscreenMap()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" onclick="showPage('home')">
+            <i class="fas fa-utensils"></i>
+            <span>Discover</span>
+        </button>
+        <button class="nav-item" onclick="showPage('search-results')">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </button>
+        <button class="nav-item" onclick="showPage('add-stall')">
+            <i class="fas fa-plus"></i>
+            <span>Add</span>
+        </button>
+        <button class="nav-item">
+            <i class="fas fa-bookmark"></i>
+            <span>Saved</span>
+        </button>
+        <button class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </button>
+    </nav>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
